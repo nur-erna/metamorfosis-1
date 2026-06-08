@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPI Metamorfosis Hewan - Kelas VIII SMP</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for better readability -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- Header / Navigation Bar -->
+  <header class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-3">
+      <div class="flex items-center gap-3">
+        <div class="bg-white text-emerald-700 p-2 rounded-lg shadow-inner">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-extrabold tracking-tight">MPI: Metamorfosis Hewan</h1>
+          <p class="text-xs text-emerald-100">Ilmu Pengetahuan Alam (IPA) - SMP Kelas VIII</p>
+        </div>
+      </div>
+      
+      <!-- Nav Tabs -->
+      <nav class="flex flex-wrap gap-1 bg-teal-800/40 p-1 rounded-xl">
+        <button onclick="switchTab('beranda')" id="btn-beranda" class="tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 bg-white text-emerald-800 shadow-sm">
+          Beranda
+        </button>
+        <button onclick="switchTab('materi')" id="btn-materi" class="tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 text-white hover:bg-white/10">
+          Materi
+        </button>
+        <button onclick="switchTab('lab')" id="btn-lab" class="tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 text-white hover:bg-white/10">
+          Mini Lab
+        </button>
+        <button onclick="switchTab('evaluasi')" id="btn-evaluasi" class="tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 text-white hover:bg-white/10">
+          Evaluasi
+        </button>
+        <button onclick="switchTab('glosarium')" id="btn-glosarium" class="tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 text-white hover:bg-white/10">
+          Glosarium
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6">
+    
+    <!-- SECTION: BERANDA -->
+    <section id="sec-beranda" class="tab-content block space-y-6 animate-fadeIn">
+      <!-- Welcome Hero -->
+      <div class="bg-gradient-to-br from-emerald-50 to-teal-100 rounded-3xl p-6 md:p-10 border border-emerald-100 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-4 max-w-2xl">
+          <span class="bg-emerald-200/60 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Selamat Datang</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 leading-tight">
+            Eksplorasi Keajaiban Siklus Hidup Hewan!
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            Metamorfosis adalah salah satu proses biologis paling menakjubkan di bumi. Melalui media pembelajaran interaktif ini, kamu akan mempelajari bagaimana hewan bertransformasi secara drastis dari telur hingga dewasa. 
+          </p>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <button onclick="switchTab('materi')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-emerald-600/20 transition-all transform hover:-translate-y-0.5">
+              Mulai Belajar
+            </button>
+            <button onclick="switchTab('lab')" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-bold px-6 py-3 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5">
+              Uji Kemampuan (Mini Lab)
+            </button>
+          </div>
+        </div>
+        <!-- Visual Accent Hero -->
+        <div class="w-full max-w-xs bg-white p-5 rounded-2xl shadow-xl border border-emerald-50 relative overflow-hidden">
+          <div class="absolute -right-8 -top-8 w-24 h-24 bg-emerald-100 rounded-full blur-xl"></div>
+          <div class="relative z-10 text-center space-y-4">
+            <span class="text-5xl block animate-bounce">🦋</span>
+            <h4 class="font-bold text-slate-700">Fakta Keren!</h4>
+            <p class="text-xs text-slate-500">Ulat meluluhkan seluruh organ tubuhnya di dalam kepompong sebelum berubah menjadi kupu-kupu yang indah!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Capaian & Petunjuk -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-3">
+          <h3 class="text-lg font-bold text-emerald-800 flex items-center gap-2">
+            📌 Tujuan Pembelajaran
+          </h3>
+          <ul class="space-y-2.5 text-sm text-slate-600">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>Siswa mampu menjelaskan definisi metamorfosis pada hewan dengan tepat.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>Siswa dapat membedakan tahapan metamorfosis sempurna (holometabola) dan tidak sempurna (hemimetabola).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span>Siswa mampu menganalisis fase-fase pertumbuhan hewan tertentu melalui simulasi visual.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-3">
+          <h3 class="text-lg font-bold text-teal-800 flex items-center gap-2">
+            🧭 Petunjuk Belajar
+          </h3>
+          <ul class="space-y-2.5 text-sm text-slate-600">
+            <li class="flex items-center gap-2">
+              <span class="bg-teal-100 text-teal-700 w-5 h-5 rounded-full flex items-center justify-center font-bold text-xs">1</span>
+              <span>Pelajari materi di tab <strong>Materi</strong> secara berurutan.</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="bg-teal-100 text-teal-700 w-5 h-5 rounded-full flex items-center justify-center font-bold text-xs">2</span>
+              <span>Gunakan simulator untuk melihat perubahan setiap fase secara detail.</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="bg-teal-100 text-teal-700 w-5 h-5 rounded-full flex items-center justify-center font-bold text-xs">3</span>
+              <span>Coba susun fase acak di <strong>Mini Lab</strong> untuk evaluasi awal.</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="bg-teal-100 text-teal-700 w-5 h-5 rounded-full flex items-center justify-center font-bold text-xs">4</span>
+              <span>Kerjakan kuis akhir pada tab <strong>Evaluasi</strong> untuk mengukur skor pemahamanmu.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: MATERI -->
+    <section id="sec-materi" class="tab-content hidden space-y-6 animate-fadeIn">
+      <!-- Materi Sub Navigation -->
+      <div class="flex flex-wrap border-b border-slate-200 gap-1">
+        <button onclick="switchMateriSubTab('materi-intro')" id="sub-materi-intro" class="sub-tab-btn border-b-2 border-emerald-600 px-4 py-2 font-bold text-sm text-emerald-700">
+          1. Pengenalan
+        </button>
+        <button onclick="switchMateriSubTab('materi-sempurna')" id="sub-materi-sempurna" class="sub-tab-btn border-b-2 border-transparent px-4 py-2 text-sm font-medium text-slate-500 hover:text-slate-800">
+          2. Metamorfosis Sempurna
+        </button>
+        <button onclick="switchMateriSubTab('materi-tidak-sempurna')" id="sub-materi-tidak-sempurna" class="sub-tab-btn border-b-2 border-transparent px-4 py-2 text-sm font-medium text-slate-500 hover:text-slate-800">
+          3. Metamorfosis Tidak Sempurna
+        </button>
+      </div>
+
+      <!-- SUB-TAB: 1. PENGENALAN -->
+      <div id="div-materi-intro" class="materi-sub-content block space-y-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 space-y-4">
+            <h3 class="text-2xl font-bold text-slate-800">Apa itu Metamorfosis?</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+              <strong>Metamorfosis</strong> berasal dari bahasa Yunani, yaitu <em>"meta"</em> (perubahan) dan <em>"morphe"</em> (bentuk). Dalam biologi, ini mengacu pada proses perkembangan biologi pada hewan yang melibatkan perubahan penampilan fisik dan/atau struktur setelah kelahiran atau penetasan.
+            </p>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+              Perubahan fisik ini terjadi akibat pertumbuhan sel dan diferensiasi sel yang sangat radikal. Selama proses metamorfosis, hewan tidak hanya berganti ukuran tubuh, melainkan juga seringkali mengalami perubahan organ dalam, habitat hidup, hingga cara mendapatkan makanan.
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl p-5 text-white flex flex-col justify-center space-y-4 shadow-md">
+            <h4 class="font-extrabold text-lg">💡 Konsep Utama</h4>
+            <div class="space-y-3 text-xs leading-relaxed text-emerald-50">
+              <p>🌱 <strong>Pertumbuhan:</strong> Pertambahan ukuran tubuh (kuantitatif).</p>
+              <p>🦋 <strong>Perkembangan:</strong> Proses menuju kedewasaan fungsi organ (kualitatif).</p>
+              <p>🧬 <strong>Hormon Pengendali:</strong> Proses ini dikendalikan oleh hormon seperti ekdison dan hormon juvenile.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dua Jenis Utama Card -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-2xl border-l-4 border-emerald-500 shadow-sm space-y-3">
+            <span class="text-xs font-bold uppercase tracking-wide bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">Holometabola</span>
+            <h4 class="text-lg font-bold text-slate-800">Metamorfosis Sempurna</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Bentuk tubuh hewan saat muda sangat jauh berbeda dengan bentuk dewasanya. Melalui fase transisi/istirahat yang dinamakan pupa (kepompong).
+            </p>
+            <div class="text-xs text-slate-500 italic">Contoh: Kupu-kupu, Katak, Nyamuk, Lalat</div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-2xl border-l-4 border-amber-500 shadow-sm space-y-3">
+            <span class="text-xs font-bold uppercase tracking-wide bg-amber-100 text-amber-800 px-2.5 py-1 rounded-md">Hemimetabola</span>
+            <h4 class="text-lg font-bold text-slate-800">Metamorfosis Tidak Sempurna</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Bentuk tubuh hewan saat menetas mirip dengan bentuk dewasanya, hanya beberapa bagian tubuh seperti sayap belum tumbuh sempurna. Tidak memiliki fase pupa melainkan fase nimfa.
+            </p>
+            <div class="text-xs text-slate-500 italic">Contoh: Belalang, Jangkrik, Capung, Kecoak</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-TAB: 2. METAMORFOSIS SEMPURNA -->
+      <div id="div-materi-sempurna" class="materi-sub-content hidden space-y-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+          <div class="max-w-3xl space-y-3">
+            <h3 class="text-2xl font-bold text-emerald-800">Ciri Metamorfosis Sempurna</h3>
+            <p class="text-slate-600 leading-relaxed text-sm">
+              Metamorfosis sempurna dicirikan dengan adanya 4 tahapan siklus hidup utama: <strong>Telur &rarr; Larva &rarr; Pupa (Kepompong) &rarr; Imago (Dewasa)</strong>. 
+              Selain perbedaan bentuk fisik yang sangat drastis, perilaku dan makanan dari fase larva sering kali sangat berbeda dengan fase imago.
+            </p>
+          </div>
+
+          <!-- Interactive Simulator: Kupu-kupu -->
+          <div class="mt-8 border border-slate-100 rounded-2xl p-4 md:p-6 bg-slate-50 space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+              <div>
+                <h4 class="font-bold text-lg text-slate-800">🔍 Simulator Interaktif: Metamorfosis Kupu-Kupu</h4>
+                <p class="text-xs text-slate-500">Klik tombol fase di bawah untuk mengamati perubahan detail.</p>
+              </div>
+              <div class="flex flex-wrap gap-1 bg-white p-1 rounded-lg border border-slate-200">
+                <button onclick="setButterflyStage(1)" id="btn-bf-1" class="bf-btn bg-emerald-600 text-white text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 1: Telur</button>
+                <button onclick="setButterflyStage(2)" id="btn-bf-2" class="bf-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 2: Larva</button>
+                <button onclick="setButterflyStage(3)" id="btn-bf-3" class="bf-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 3: Pupa</button>
+                <button onclick="setButterflyStage(4)" id="btn-bf-4" class="bf-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 4: Imago</button>
+              </div>
+            </div>
+
+            <!-- Visualization Pane -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 bg-white p-6 rounded-xl border border-slate-200 shadow-inner items-center min-h-[320px]">
+              <!-- Left Visual Section -->
+              <div class="md:col-span-5 flex flex-col items-center justify-center p-4 bg-emerald-50/50 rounded-lg min-h-[240px]">
+                <div id="bf-svg-container" class="w-48 h-48 flex items-center justify-center text-8xl transition-all duration-300 transform scale-110">
+                  <!-- Dynamic SVG will be injected here via Javascript -->
+                  🍃🥚
+                </div>
+                <div class="mt-4 text-center">
+                  <span id="bf-stage-badge" class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">Fase 1: Telur (Egg)</span>
+                </div>
+              </div>
+
+              <!-- Right Description Section -->
+              <div class="md:col-span-7 space-y-4">
+                <h5 id="bf-stage-title" class="text-xl font-bold text-slate-800">Tahap 1: Telur Kupu-kupu</h5>
+                <p id="bf-stage-desc" class="text-slate-600 text-sm leading-relaxed">
+                  Kupu-kupu betina meletakkan telurnya pada permukaan daun (biasanya di bagian bawah daun agar terlindung dari predator). Perekat alami yang sangat kuat diproduksi oleh induk agar telur tidak mudah jatuh tertiup angin atau hanyut terbawa air hujan. Fase ini biasanya berlangsung selama 3-5 hari sebelum akhirnya menetas.
+                </p>
+                <div class="bg-slate-50 p-3 rounded-lg border-l-2 border-emerald-500">
+                  <span class="text-xs font-bold text-slate-700 block">🔬 Hubungan Fungsi Organ & Lingkungan:</span>
+                  <p id="bf-stage-note" class="text-xs text-slate-500 mt-1">Induk kupu-kupu secara insting meletakkan telurnya di jenis daun yang merupakan makanan favorit dari larva yang akan menetas nanti.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Metamorfosis Katak (Sempurna dengan Amfibi) -->
+          <div class="mt-8 border border-slate-100 rounded-2xl p-4 md:p-6 bg-slate-50 space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+              <div>
+                <h4 class="font-bold text-lg text-slate-800">🔍 Simulator Interaktif: Metamorfosis Katak</h4>
+                <p class="text-xs text-slate-500">Bagaimana hewan amfibi bermigrasi organ dari air ke darat?</p>
+              </div>
+              <div class="flex flex-wrap gap-1 bg-white p-1 rounded-lg border border-slate-200">
+                <button onclick="setFrogStage(1)" id="btn-frog-1" class="frog-btn bg-teal-600 text-white text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 1: Telur</button>
+                <button onclick="setFrogStage(2)" id="btn-frog-2" class="frog-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 2: Kecebong</button>
+                <button onclick="setFrogStage(3)" id="btn-frog-3" class="frog-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 3: Kecebong Berkaki</button>
+                <button onclick="setFrogStage(4)" id="btn-frog-4" class="frog-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 4: Katak Muda</button>
+                <button onclick="setFrogStage(5)" id="btn-frog-5" class="frog-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 5: Katak Dewasa</button>
+              </div>
+            </div>
+
+            <!-- Visualization Pane -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 bg-white p-6 rounded-xl border border-slate-200 shadow-inner items-center min-h-[320px]">
+              <!-- Left Visual Section -->
+              <div class="md:col-span-5 flex flex-col items-center justify-center p-4 bg-teal-50/50 rounded-lg min-h-[240px]">
+                <div id="frog-svg-container" class="w-48 h-48 flex items-center justify-center text-8xl transition-all duration-300 transform scale-110">
+                  🐸🥚🥚
+                </div>
+                <div class="mt-4 text-center">
+                  <span id="frog-stage-badge" class="px-3 py-1 bg-teal-100 text-teal-800 text-xs font-bold rounded-full">Fase 1: Telur (Eggs)</span>
+                </div>
+              </div>
+
+              <!-- Right Description Section -->
+              <div class="md:col-span-7 space-y-4">
+                <h5 id="frog-stage-title" class="text-xl font-bold text-slate-800">Tahap 1: Telur di Air</h5>
+                <p id="frog-stage-desc" class="text-slate-600 text-sm leading-relaxed">
+                  Katak betina bertelur di air dalam jumlah ratusan bahkan ribuan. Telur katak dilapisi oleh lendir tebal seperti jeli yang berfungsi melindungi embrio dari guncangan mekanis, predator air, serta menjaga kelembapan yang dibutuhkan agar telur tidak kering.
+                </p>
+                <div class="bg-slate-50 p-3 rounded-lg border-l-2 border-teal-500">
+                  <span class="text-xs font-bold text-slate-700 block">🔬 Adaptasi Alat Pernapasan:</span>
+                  <p id="frog-stage-note" class="text-xs text-slate-500 mt-1">Pada fase ini, kehidupan murni bergantung pada persediaan nutrisi di dalam kuning telur (yolk).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-TAB: 3. METAMORFOSIS TIDAK SEMPURNA -->
+      <div id="div-materi-tidak-sempurna" class="materi-sub-content hidden space-y-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+          <div class="max-w-3xl space-y-3">
+            <h3 class="text-2xl font-bold text-amber-800">Ciri Metamorfosis Tidak Sempurna</h3>
+            <p class="text-slate-600 leading-relaxed text-sm">
+              Metamorfosis tidak sempurna ditandai dengan siklus hidup: <strong>Telur &rarr; Nimfa (Hewan Muda) &rarr; Imago (Dewasa)</strong>. 
+              Fase nimfa secara morfologi menyerupai bentuk dewasa, hanya saja berukuran lebih kecil, memiliki warna tubuh yang berbeda, serta belum memiliki sayap yang fungsional maupun organ reproduksi yang matang.
+            </p>
+          </div>
+
+          <!-- Interactive Simulator: Belalang -->
+          <div class="mt-8 border border-slate-100 rounded-2xl p-4 md:p-6 bg-slate-50 space-y-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+              <div>
+                <h4 class="font-bold text-lg text-slate-800">🔍 Simulator Interaktif: Metamorfosis Belalang</h4>
+                <p class="text-xs text-slate-500">Bagaimana serangga tanpa fase kepompong bertumbuh?</p>
+              </div>
+              <div class="flex flex-wrap gap-1 bg-white p-1 rounded-lg border border-slate-200">
+                <button onclick="setGrasshopperStage(1)" id="btn-gh-1" class="gh-btn bg-amber-600 text-white text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 1: Telur</button>
+                <button onclick="setGrasshopperStage(2)" id="btn-gh-2" class="gh-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 2: Nimfa Tanpa Sayap</button>
+                <button onclick="setGrasshopperStage(3)" id="btn-gh-3" class="gh-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 3: Nimfa Bersayap</button>
+                <button onclick="setGrasshopperStage(4)" id="btn-gh-4" class="gh-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all">Fase 4: Imago (Dewasa)</button>
+              </div>
+            </div>
+
+            <!-- Visualization Pane -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 bg-white p-6 rounded-xl border border-slate-200 shadow-inner items-center min-h-[320px]">
+              <!-- Left Visual Section -->
+              <div class="md:col-span-5 flex flex-col items-center justify-center p-4 bg-amber-50/50 rounded-lg min-h-[240px]">
+                <div id="gh-svg-container" class="w-48 h-48 flex items-center justify-center text-8xl transition-all duration-300 transform scale-110">
+                  🕳️🥚🥚
+                </div>
+                <div class="mt-4 text-center">
+                  <span id="gh-stage-badge" class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">Fase 1: Telur (Eggs)</span>
+                </div>
+              </div>
+
+              <!-- Right Description Section -->
+              <div class="md:col-span-7 space-y-4">
+                <h5 id="gh-stage-title" class="text-xl font-bold text-slate-800">Tahap 1: Telur Belalang</h5>
+                <p id="gh-stage-desc" class="text-slate-600 text-sm leading-relaxed">
+                  Belalang betina menanam telur-telurnya di bawah tanah atau di antara serasah daun menggunakan ovipositornya. Telur diletakkan di dalam polong busa pelindung yang akan mengeras untuk menjaga suhu dan kelembapan konstan serta mengamankannya dari serangan predator selama masa inkubasi (10-20 hari).
+                </p>
+                <div class="bg-slate-50 p-3 rounded-lg border-l-2 border-amber-500">
+                  <span class="text-xs font-bold text-slate-700 block">🔬 Proses Ekdisis (Molt):</span>
+                  <p id="gh-stage-note" class="text-xs text-slate-500 mt-1">Selama fase ini, embrio melakukan persiapan perkembangan segmentasi tubuh di dalam pelindung busa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: MINI LAB -->
+    <section id="sec-lab" class="tab-content hidden space-y-6 animate-fadeIn">
+      <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+        <div>
+          <h3 class="text-2xl font-bold text-slate-800">🧪 Mini Lab: Urutkan Metamorfosis</h3>
+          <p class="text-sm text-slate-500">Pilih salah satu hewan di bawah, lalu susun tahapan acaknya ke urutan yang benar dari awal sampai akhir.</p>
+        </div>
+
+        <!-- Selection Buttons -->
+        <div class="flex gap-2 border-b border-slate-100 pb-4">
+          <button onclick="initLab('kupu')" id="btn-lab-kupu" class="px-4 py-2 bg-emerald-100 text-emerald-800 border-2 border-emerald-500 rounded-xl text-sm font-bold transition-all">
+            🦋 Kupu-Kupu
+          </button>
+          <button onclick="initLab('katak')" id="btn-lab-katak" class="px-4 py-2 bg-slate-100 text-slate-600 hover:bg-slate-200 border-2 border-transparent rounded-xl text-sm font-bold transition-all">
+            🐸 Katak
+          </button>
+          <button onclick="initLab('belalang')" id="btn-lab-belalang" class="px-4 py-2 bg-slate-100 text-slate-600 hover:bg-slate-200 border-2 border-transparent rounded-xl text-sm font-bold transition-all">
+            🦗 Belalang
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <!-- Scrambled Elements Zone -->
+          <div class="md:col-span-7 bg-slate-50 p-6 rounded-xl border border-slate-200 space-y-4">
+            <span class="text-xs font-bold uppercase text-slate-500 tracking-wider">📦 Tahapan Acak (Pilih/Klik salah satu untuk menyusun)</span>
+            <div id="scrambled-zone" class="grid grid-cols-2 gap-3">
+              <!-- Dynamically populated card stages -->
+            </div>
+          </div>
+
+          <!-- Answer/Target Zone -->
+          <div class="md:col-span-5 bg-emerald-50/40 p-6 rounded-xl border border-dashed border-emerald-300 space-y-4 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase text-emerald-800 tracking-wider">📥 Urutan Anda saat ini:</span>
+              <div id="target-zone" class="space-y-2 mt-3 min-h-[160px] flex flex-col justify-center">
+                <!-- Dynamically populated active slots -->
+                <p class="text-slate-400 text-center text-sm italic">Klik kartu acak di sebelah kiri untuk menyusun di sini...</p>
+              </div>
+            </div>
+
+            <!-- Lab Action Buttons -->
+            <div class="space-y-2 pt-4">
+              <div id="lab-feedback" class="hidden p-3 rounded-lg text-xs font-semibold text-center">
+                <!-- Feedback message -->
+              </div>
+              <div class="flex gap-2">
+                <button onclick="checkLabResult()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-lg text-sm transition-all shadow-md shadow-emerald-600/10">
+                  Periksa Jawaban
+                </button>
+                <button onclick="resetLab()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2.5 px-4 rounded-lg text-sm transition-all">
+                  Ulangi
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: EVALUASI -->
+    <section id="sec-evaluasi" class="tab-content hidden space-y-6 animate-fadeIn">
+      <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+        
+        <!-- Welcome Quiz Screen -->
+        <div id="quiz-welcome-screen" class="space-y-6 text-center max-w-xl mx-auto py-8">
+          <span class="text-6xl block">📝</span>
+          <h3 class="text-2xl font-extrabold text-slate-800">Kuis Evaluasi Metamorfosis</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Yuk, kita tes seberapa paham kamu dengan materi metamorfosis kelas 8 SMP. Kuis ini terdiri dari <strong>5 soal pilihan ganda</strong>. Di akhir kuis, kamu akan langsung melihat nilai, klasifikasi pemahaman, serta pembahasan dari setiap soal!
+          </p>
+          <button onclick="startQuiz()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-8 py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 transition-all inline-block">
+            Mulai Kuis Sekarang
+          </button>
+        </div>
+
+        <!-- Dynamic Quiz Question Screen -->
+        <div id="quiz-play-screen" class="hidden space-y-6 max-w-3xl mx-auto">
+          <!-- Quiz Header Status -->
+          <div class="flex justify-between items-center border-b border-slate-100 pb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Pertanyaan <span id="quiz-current-num">1</span> dari 5</span>
+            <div class="w-1/2 bg-slate-100 rounded-full h-2">
+              <div id="quiz-progress-bar" class="bg-emerald-500 h-2 rounded-full transition-all duration-300" style="width: 20%;"></div>
+            </div>
+          </div>
+
+          <!-- Question -->
+          <h4 id="quiz-question-text" class="text-lg md:text-xl font-bold text-slate-800">
+            <!-- Dynamically populated question text -->
+          </h4>
+
+          <!-- Answers Options -->
+          <div id="quiz-options-container" class="space-y-3">
+            <!-- Dynamically populated button options -->
+          </div>
+
+          <!-- Bottom Action Buttons and Explanations -->
+          <div id="quiz-explanation-box" class="hidden p-4 rounded-xl text-sm border space-y-2">
+            <!-- Dynamically populated explanation -->
+          </div>
+
+          <div class="flex justify-end pt-4">
+            <button id="quiz-next-btn" onclick="nextQuestion()" disabled class="bg-slate-300 text-slate-500 cursor-not-allowed font-bold py-3 px-6 rounded-xl text-sm transition-all">
+              Pertanyaan Berikutnya &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Result Screen -->
+        <div id="quiz-result-screen" class="hidden space-y-6 text-center max-w-xl mx-auto py-6">
+          <span id="quiz-result-emoji" class="text-7xl block">🏆</span>
+          <h3 class="text-3xl font-black text-slate-800">Hasil Evaluasi Kamu!</h3>
+          
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/60 shadow-inner inline-block w-full">
+            <div class="grid grid-cols-2 gap-4 divide-x divide-slate-200">
+              <div>
+                <span class="text-xs text-slate-500 block uppercase font-bold tracking-wider">Skor Akhir</span>
+                <span id="quiz-result-score" class="text-5xl font-black text-emerald-600 block mt-1">100</span>
+              </div>
+              <div>
+                <span class="text-xs text-slate-500 block uppercase font-bold tracking-wider">Benar / Salah</span>
+                <span id="quiz-result-ratio" class="text-2xl font-bold text-slate-700 block mt-3">5 / 0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <h4 id="quiz-result-title" class="font-bold text-lg text-slate-800">Sangat Memuaskan!</h4>
+            <p id="quiz-result-desc" class="text-slate-600 text-sm leading-relaxed">
+              Kamu memahami konsep metamorfosis sempurna dan tidak sempurna dengan sangat baik. Pertahankan terus belajarmu ya!
+            </p>
+          </div>
+
+          <div class="flex gap-3 justify-center pt-4">
+            <button onclick="startQuiz()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl shadow-md shadow-emerald-600/10 transition-all">
+              Ulangi Kuis
+            </button>
+            <button onclick="switchTab('materi')" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-bold px-6 py-3 rounded-xl transition-all">
+              Kembali ke Materi
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: GLOSARIUM -->
+    <section id="sec-glosarium" class="tab-content hidden space-y-6 animate-fadeIn">
+      <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm space-y-6">
+        <div>
+          <h3 class="text-2xl font-bold text-slate-800">📖 Glosarium Istilah Biologi</h3>
+          <p class="text-sm text-slate-500">Kumpulan kosakata kunci seputar materi metamorfosis untuk membantu belajarmu.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/60 space-y-1">
+            <span class="font-extrabold text-emerald-800 text-sm block">Metamorfosis</span>
+            <p class="text-slate-600 text-xs leading-relaxed">Proses perubahan bentuk tubuh secara radikal dari tahapan muda hingga dewasa pada hewan.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/60 space-y-1">
+            <span class="font-extrabold text-emerald-800 text-sm block">Holometabola</span>
+            <p class="text-slate-600 text-xs leading-relaxed">Kelompok serangga yang mengalami perkembangan metamorfosis sempurna (telur-larva-pupa-dewasa).</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/60 space-y-1">
+            <span class="font-extrabold text-emerald-800 text-sm block">Hemimetabola</span>
+            <p class="text-slate-600 text-xs leading-relaxed">Kelompok serangga yang mengalami perkembangan metamorfosis tidak sempurna (telur-nimfa-dewasa).</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/60 space-y-1">
+            <span class="font-extrabold text-emerald-800 text-sm block">Larva</span>
+            <p class="text-slate-600 text-xs leading-relaxed">Bentuk muda serangga/hewan yang bentuk tubuhnya jauh berbeda dengan dewasa (contoh: ulat, jentik-jentik).</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/60 space-y-1">
+            <span class="font-extrabold text-emerald-800 text-sm block">Nimfa</span>
+            <p class="text-slate-600 text-xs leading-relaxed">Bentuk muda serangga yang secara struktural mirip dengan hewan dewasa tetapi berukuran lebih kecil dan bagian sayap belum lengkap.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/60 space-y-1">
+            <span class="font-extrabold text-emerald-800 text-sm block">Pupa / Kepompong</span>
+            <p class="text-slate-600 text-xs leading-relaxed">Fase istirahat atau transisi pada metamorfosis sempurna di mana jaringan tubuh dirombak secara total.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/60 space-y-1">
+            <span class="font-extrabold text-emerald-800 text-sm block">Imago</span>
+            <p class="text-slate-600 text-xs leading-relaxed">Fase akhir perkembangan serangga ketika tubuh sudah mencapai kedewasaan secara reproduksi dan fisik (bentuk dewasa).</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50/70 border border-slate-200/60 space-y-1">
+            <span class="font-extrabold text-emerald-800 text-sm block">Ekdisis (Molting)</span>
+            <p class="text-slate-600 text-xs leading-relaxed">Proses pelepasan atau pengelupasan rangka luar (eksoskeleton) yang lama untuk digantikan yang baru seiring pertumbuhan volume tubuh.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-800 text-slate-400 py-6 mt-12 border-t border-slate-700 text-xs">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="space-y-1 text-center md:text-left">
+        <p class="font-bold text-slate-300">Media Pembelajaran Interaktif (MPI) IPA Terpadu</p>
+        <p>Dirancang sesuai dengan Kurikulum Merdeka Fase D (Kelas 8 SMP).</p>
+      </div>
+      <div>
+        <p class="text-slate-500 text-center md:text-right">&copy; 2026 MPI Metamorfosis. Dikembangkan untuk efisiensi belajar sains digital.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic JS -->
+  <script>
+    // Global Navigation State
+    function switchTab(tabId) {
+      // Hide all main section divs
+      document.querySelectorAll('.tab-content').forEach(section => {
+        section.classList.add('hidden');
+        section.classList.remove('block');
+      });
+
+      // Show target section
+      const activeSection = document.getElementById(`sec-${tabId}`);
+      if (activeSection) {
+        activeSection.classList.remove('hidden');
+        activeSection.classList.add('block');
+      }
+
+      // Update Navigation Buttons States
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.className = "tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 text-white hover:bg-white/10";
+      });
+      const activeBtn = document.getElementById(`btn-${tabId}`);
+      if (activeBtn) {
+        activeBtn.className = "tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 bg-white text-emerald-800 shadow-sm";
+      }
+
+      // Custom triggers for specific tabs
+      if (tabId === 'lab') {
+        initLab('kupu'); // default lab selection
+      }
+    }
+
+    // Materi Sub Tabs
+    function switchMateriSubTab(subId) {
+      document.querySelectorAll('.materi-sub-content').forEach(div => {
+        div.classList.add('hidden');
+        div.classList.remove('block');
+      });
+      document.getElementById(`div-${subId}`).classList.remove('hidden');
+      document.getElementById(`div-${subId}`).classList.add('block');
+
+      document.querySelectorAll('.sub-tab-btn').forEach(btn => {
+        btn.className = "sub-tab-btn border-b-2 border-transparent px-4 py-2 text-sm font-medium text-slate-500 hover:text-slate-800";
+      });
+      document.getElementById(`sub-${subId}`).className = "sub-tab-btn border-b-2 border-emerald-600 px-4 py-2 font-bold text-sm text-emerald-700";
+    }
+
+    // SIMULATOR: KUPU-KUPU (BUTTERFLY) DATA & CONTROLLER
+    const butterflyData = {
+      1: {
+        badge: "Fase 1: Telur (Egg)",
+        title: "Tahap 1: Telur Kupu-kupu",
+        desc: "Kupu-kupu betina meletakkan telurnya pada permukaan daun (biasanya di bagian bawah daun agar terlindung dari predator). Perekat alami yang sangat kuat diproduksi oleh induk agar telur tidak mudah jatuh tertiup angin atau hanyut terbawa air hujan. Fase ini biasanya berlangsung selama 3-5 hari sebelum akhirnya menetas.",
+        note: "Induk kupu-kupu secara insting meletakkan telurnya di jenis daun yang merupakan makanan favorit dari larva yang akan menetas nanti.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full text-emerald-600" fill="currentColor">
+                <!-- Daun -->
+                <path d="M10 80 Q 50 10, 90 40 Q 50 90, 10 80 Z" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+                <path d="M10 80 Q 50 50, 90 40" fill="none" stroke="#15803d" stroke-width="1.5" stroke-dasharray="3"/>
+                <!-- Telur Kecil berkilau -->
+                <circle cx="45" cy="55" r="5" fill="#fef08a" stroke="#ca8a04" stroke-width="1"/>
+                <circle cx="53" cy="50" r="4.5" fill="#fef08a" stroke="#ca8a04" stroke-width="1"/>
+                <circle cx="38" cy="62" r="5" fill="#fef08a" stroke="#ca8a04" stroke-width="1"/>
+                <!-- Highlight cahaya -->
+                <circle cx="44" cy="53" r="1.5" fill="#fff" opacity="0.7"/>
+              </svg>`
+      },
+      2: {
+        badge: "Fase 2: Ulat (Larva)",
+        title: "Tahap 2: Larva / Ulat",
+        desc: "Setelah telur menetas, muncullah larva atau ulat. Tugas utama pada fase larva adalah makan daun-daunan sebanyak-banyaknya untuk menimbun cadangan energi yang masif. Seiring bertambah besarnya ulat, ulat akan mengalami proses ganti kulit kulit luar (eksoskeleton) yang disebut ekdisis sebanyak 4 sampai 6 kali sebelum mencapai ukuran maksimal.",
+        note: "Kecepatan metabolisme ulat sangat tinggi. Seluruh energinya digunakan untuk membentuk struktur tubuh awal dan melipatgandakan massa tubuh.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none" stroke="currentColor">
+                <!-- Daun Termakan -->
+                <path d="M10 80 Q 30 40, 50 50 T 90 40 Q 50 90, 10 80" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+                <!-- Badan Ulat Lucu -->
+                <circle cx="30" cy="50" r="7" fill="#84cc16" stroke="#4d7c0f" stroke-width="1.5"/>
+                <circle cx="38" cy="46" r="7.5" fill="#84cc16" stroke="#4d7c0f" stroke-width="1.5"/>
+                <circle cx="47" cy="45" r="8" fill="#a3e635" stroke="#4d7c0f" stroke-width="1.5"/>
+                <circle cx="56" cy="47" r="7.5" fill="#84cc16" stroke="#4d7c0f" stroke-width="1.5"/>
+                <circle cx="64" cy="51" r="7" fill="#84cc16" stroke="#4d7c0f" stroke-width="1.5"/>
+                <!-- Kepala Ulat -->
+                <circle cx="71" cy="54" r="8" fill="#65a30d" stroke="#3f6212" stroke-width="1.5"/>
+                <!-- Mata Ulat -->
+                <circle cx="73" cy="52" r="1.5" fill="#000"/>
+                <!-- Kaki kecil -->
+                <line x1="38" y1="53.5" x2="38" y2="58" stroke="#4d7c0f" stroke-width="2" stroke-linecap="round"/>
+                <line x1="47" y1="53" x2="47" y2="58" stroke="#4d7c0f" stroke-width="2" stroke-linecap="round"/>
+                <line x1="56" y1="54.5" x2="56" y2="59" stroke="#4d7c0f" stroke-width="2" stroke-linecap="round"/>
+              </svg>`
+      },
+      3: {
+        badge: "Fase 3: Kepompong (Pupa)",
+        title: "Tahap 3: Pupa / Kepompong",
+        desc: "Ketika ulat sudah mencapai ukuran tubuh maksimal dan kenyang, ulat akan mencari ranting pohon yang kokoh dan bergelantungan membentuk struktur kepompong. Dari luar, kepompong terlihat seperti benda mati atau sedang beristirahat. Namun di dalam, terjadi histolisis di mana organ ulat meleleh sepenuhnya dan disusun kembali menjadi bentuk tubuh baru.",
+        note: "Ini adalah masa transformasi genetik raksasa. Cangkang luar biasanya tersamar sempurna menyerupai warna dedaunan kering atau hijau segar.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <!-- Ranting Kayu -->
+                <path d="M10 20 Q 50 15, 90 25" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+                <!-- Gantungan Sutra -->
+                <line x1="50" y1="18" x2="50" y2="35" stroke="#cbd5e1" stroke-width="1.5"/>
+                <!-- Tubuh Kepompong -->
+                <path d="M42 35 C42 35, 32 55, 50 75 C68 55, 58 35, 58 35 Z" fill="#15803d" stroke="#14532d" stroke-width="2"/>
+                <!-- Segmen Kepompong -->
+                <path d="M43 45 Q 50 48, 57 45" stroke="#14532d" stroke-width="1.5"/>
+                <path d="M44 55 Q 50 58, 56 55" stroke="#14532d" stroke-width="1.5"/>
+                <path d="M46 65 Q 50 67, 54 65" stroke="#14532d" stroke-width="1.5"/>
+              </svg>`
+      },
+      4: {
+        badge: "Fase 4: Kupu-Kupu (Imago)",
+        title: "Tahap 4: Imago (Dewasa)",
+        desc: "Setelah perombakan organ selesai (biasanya 10-15 hari), cangkang kepompong akan meretakan kepalanya dan kupu-kupu yang indah akan keluar. Saat pertama kali menetas, sayap kupu-kupu masih basah dan melipat erat. Kupu-kupu akan memompa hemolimfa (darah serangga) ke urat sayap agar membentang kokoh sebelum akhirnya terbang bebas.",
+        note: "Kupu-kupu dewasa bernapas menggunakan trakea, memakan nektar bunga cair menggunakan mulut tipe pengisap (probosis), dan siap melakukan reproduksi.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <!-- Sayap Belakang Kiri -->
+                <path d="M50 50 C20 40, 25 80, 50 65 Z" fill="#f97316" stroke="#7c2d12" stroke-width="1.5"/>
+                <!-- Sayap Depan Kiri -->
+                <path d="M50 50 C10 10, 35 40, 50 52 Z" fill="#e11d48" stroke="#7c2d12" stroke-width="1.5"/>
+                <!-- Sayap Belakang Kanan -->
+                <path d="M50 50 C80 40, 75 80, 50 65 Z" fill="#f97316" stroke="#7c2d12" stroke-width="1.5"/>
+                <!-- Sayap Depan Kanan -->
+                <path d="M50 50 C90 10, 65 40, 50 52 Z" fill="#e11d48" stroke="#7c2d12" stroke-width="1.5"/>
+                <!-- Tubuh Kupu-kupu -->
+                <ellipse cx="50" cy="52" rx="3.5" ry="18" fill="#1e293b" stroke="#0f172a" stroke-width="1"/>
+                <!-- Kepala -->
+                <circle cx="50" cy="31" r="4" fill="#1e293b"/>
+                <!-- Antena -->
+                <path d="M48 29 Q40 20, 36 18" stroke="#0f172a" stroke-width="1" stroke-linecap="round"/>
+                <path d="M52 29 Q60 20, 64 18" stroke="#0f172a" stroke-width="1" stroke-linecap="round"/>
+              </svg>`
+      }
+    };
+
+    function setButterflyStage(stageNum) {
+      const data = butterflyData[stageNum];
+      document.getElementById('bf-svg-container').innerHTML = data.svg;
+      document.getElementById('bf-stage-badge').innerText = data.badge;
+      document.getElementById('bf-stage-title').innerText = data.title;
+      document.getElementById('bf-stage-desc').innerText = data.desc;
+      document.getElementById('bf-stage-note').innerText = data.note;
+
+      document.querySelectorAll('.bf-btn').forEach(btn => {
+        btn.className = "bf-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all";
+      });
+      document.getElementById(`btn-bf-${stageNum}`).className = "bf-btn bg-emerald-600 text-white text-xs px-3 py-1.5 rounded font-bold transition-all";
+    }
+
+    // SIMULATOR: KATAK (FROG) DATA & CONTROLLER
+    const frogData = {
+      1: {
+        badge: "Fase 1: Telur (Egg)",
+        title: "Tahap 1: Telur dalam Kumpulan Jeli",
+        desc: "Katak menaruh telur di wilayah perairan yang tenang agar tidak hanyut terhempas arus. Memiliki lapisan pelindung transparan serupa jeli kenyal yang melindunginya dari fluktuasi cuaca ekstrem dan predator air. Proses ini merupakan permulaan dari kehidupan amfibi.",
+        note: "Hanya butuh 1-3 minggu untuk embrio kecil di dalam jeli berkembangan membentuk kecebong fungsional.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <!-- Air -->
+                <path d="M5 80 Q50 75, 95 80" stroke="#0284c7" stroke-width="2" stroke-linecap="round"/>
+                <!-- Kumpulan Jeli Transparan -->
+                <circle cx="40" cy="50" r="14" fill="#38bdf8" fill-opacity="0.2" stroke="#0284c7" stroke-dasharray="2 1"/>
+                <circle cx="58" cy="46" r="12" fill="#38bdf8" fill-opacity="0.2" stroke="#0284c7" stroke-dasharray="2 1"/>
+                <circle cx="48" cy="62" r="13" fill="#38bdf8" fill-opacity="0.2" stroke="#0284c7" stroke-dasharray="2 1"/>
+                <!-- Inti Embrio Hitam -->
+                <circle cx="40" cy="50" r="4" fill="#0f172a"/>
+                <circle cx="58" cy="46" r="3.5" fill="#0f172a"/>
+                <circle cx="48" cy="62" r="4" fill="#0f172a"/>
+              </svg>`
+      },
+      2: {
+        badge: "Fase 2: Kecebong (Tadpole)",
+        title: "Tahap 2: Kecebong (Berudu)",
+        desc: "Setelah menetas, muncullah berudu atau kecebong. Di fase ini, berudu murni berperilaku layaknya ikan air: bernapas menggunakan insang luar yang halus, bergerak dengan bantuan ekor bersirip pipih yang panjang, serta dominan memakan plankton mikro atau alga di ekosistem perairan.",
+        note: "Di fase awal kecebong, tidak ada organ kaki sama sekali yang terbentuk, fokus energi hanya pada metabolisme renang.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <!-- Ombak Air -->
+                <path d="M5 85 Q 50 78, 95 85" stroke="#bae6fd" stroke-width="2"/>
+                <!-- Badan Kecebong Oval -->
+                <ellipse cx="40" cy="50" rx="14" ry="9" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+                <!-- Ekor Pipih Bergelombang -->
+                <path d="M53 50 Q 75 42, 90 50 Q 75 58, 53 50" fill="#475569" opacity="0.6"/>
+                <path d="M54 50 L 85 50" stroke="#1e293b" stroke-width="1"/>
+                <!-- Mata Kecebong -->
+                <circle cx="34" cy="46" r="1.5" fill="#fff"/>
+                <!-- Insang luar merah jambu tipis -->
+                <path d="M43 41 Q 45 35, 48 37" stroke="#f43f5e" stroke-width="1" stroke-linecap="round"/>
+                <path d="M45 42 Q 49 38, 51 40" stroke="#f43f5e" stroke-width="1" stroke-linecap="round"/>
+              </svg>`
+      },
+      3: {
+        badge: "Fase 3: Kecebong Berkaki (Two/Four Legs)",
+        title: "Tahap 3: Berudu dengan Tunas Kaki",
+        desc: "Seiring waktu berjalan, kecebong mulai tumbuh secara anatomis. Kaki belakang akan keluar terlebih dahulu, disusul pembentukan sepasang kaki depan. Seiring kaki bertumbuh fungsional, paru-paru katak juga mulai terbentuk secara internal di dalam rongga tubuhnya untuk menggantikan sistem insang.",
+        note: "Ekor kecebong perlahan mengalami proses degradasi mandiri (autolisis), di mana sel-sel ekor diserap kembali sebagai sumber protein pembangun kaki.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <path d="M5 85 Q 50 78, 95 85" stroke="#bae6fd" stroke-width="2"/>
+                <ellipse cx="40" cy="50" rx="15" ry="11" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+                <!-- Ekor memendek -->
+                <path d="M54 50 Q 70 45, 80 50 Q 70 55, 54 50" fill="#475569" opacity="0.6"/>
+                <!-- Kaki Belakang -->
+                <path d="M48 57 L 54 66 L 61 68" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Kaki Depan -->
+                <path d="M35 56 L 31 64 L 26 64" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="45" r="1.5" fill="#fff"/>
+              </svg>`
+      },
+      4: {
+        badge: "Fase 4: Katak Muda (Froglet)",
+        title: "Tahap 4: Katak Muda Bersayap / Berekor Pendek",
+        desc: "Katak muda atau percil telah memiliki empat kaki lengkap dengan kemampuan melompat yang mumpuni. Organ ekornya kini hanya menyisakan sedikit pangkal kecil di bagian belakang. Di fase ini, mereka mulai berani berjemur naik ke atas daratan basah atau mengapung di dedaunan air.",
+        note: "Pernapasan utama sekarang mulai sepenuhnya dipikul oleh kombinasi paru-paru dan lapisan kulit tipis basah amfibi.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <!-- Daun Teratai -->
+                <ellipse cx="50" cy="80" rx="40" ry="10" fill="#15803d" opacity="0.9"/>
+                <!-- Badan Katak Muda Hijau Kecoklatan -->
+                <path d="M30 55 Q 50 40, 70 55 Q 70 70, 30 70 Z" fill="#4d7c0f" stroke="#3f6212" stroke-width="1.5"/>
+                <!-- Ekor Sisa Kecil -->
+                <path d="M30 65 L 22 68" stroke="#3f6212" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Kaki Belakang Menekuk -->
+                <path d="M60 65 Q 75 62, 70 75" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+                <!-- Kaki Depan -->
+                <path d="M38 68 L 38 78" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/>
+                <path d="M55 68 L 55 78" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/>
+                <!-- Kepala & Mata -->
+                <ellipse cx="65" cy="50" rx="7" ry="8" fill="#4d7c0f"/>
+                <circle cx="67" cy="46" r="2" fill="#fff"/>
+                <circle cx="67" cy="46" r="1" fill="#000"/>
+              </svg>`
+      },
+      5: {
+        badge: "Fase 5: Katak Dewasa (Imago)",
+        title: "Tahap 5: Katak Dewasa Terestrial",
+        desc: "Katak dewasa telah sepenuhnya kehilangan sisa ekornya. Mereka memiliki kaki belakang yang sangat panjang, berotot kuat, dan berselaput yang beradaptasi optimal untuk melompat tinggi dan berenang cepat. Katak menjadi hewan pemangsa (karnivora) yang memangsa berbagai serangga menggunakan lidahnya yang lengket dan dapat dijulurkan dengan cepat.",
+        note: "Katak dewasa hidup menetap di wilayah darat basah, hanya sesekali kembali masuk ke perairan saat musim kawin untuk meletakkan telur.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <!-- Batu Pijakan -->
+                <path d="M10 85 Q 50 78, 90 85" fill="#64748b" stroke="#475569" stroke-width="2"/>
+                <!-- Badan Katak Bulat Besar -->
+                <ellipse cx="50" cy="55" rx="20" ry="16" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+                <!-- Mata Melotot Populer -->
+                <circle cx="40" cy="38" r="5" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+                <circle cx="40" cy="38" r="2" fill="#fff"/>
+                <circle cx="40" cy="38" r="1" fill="#000"/>
+                
+                <circle cx="60" cy="38" r="5" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+                <circle cx="60" cy="38" r="2" fill="#fff"/>
+                <circle cx="60" cy="38" r="1" fill="#000"/>
+                <!-- Kaki Lipat Kuat -->
+                <path d="M32 58 Q 18 55, 22 75" stroke="#15803d" stroke-width="4.5" stroke-linecap="round"/>
+                <path d="M68 58 Q 82 55, 78 75" stroke="#15803d" stroke-width="4.5" stroke-linecap="round"/>
+                <!-- Mulut Lebar Senyum -->
+                <path d="M42 48 Q 50 54, 58 48" stroke="#15803d" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>`
+      }
+    };
+
+    function setFrogStage(stageNum) {
+      const data = frogData[stageNum];
+      document.getElementById('frog-svg-container').innerHTML = data.svg;
+      document.getElementById('frog-stage-badge').innerText = data.badge;
+      document.getElementById('frog-stage-title').innerText = data.title;
+      document.getElementById('frog-stage-desc').innerText = data.desc;
+      document.getElementById('frog-stage-note').innerText = data.note;
+
+      document.querySelectorAll('.frog-btn').forEach(btn => {
+        btn.className = "frog-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all";
+      });
+      document.getElementById(`btn-frog-${stageNum}`).className = "frog-btn bg-teal-600 text-white text-xs px-3 py-1.5 rounded font-bold transition-all";
+    }
+
+    // SIMULATOR: BELALANG (GRASSHOPPER) DATA & CONTROLLER
+    const grasshopperData = {
+      1: {
+        badge: "Fase 1: Telur (Egg)",
+        title: "Tahap 1: Telur Belalang di dalam Tanah",
+        desc: "Belalang betina memasukkan sekelompok telurnya ke dalam liang pasir/tanah menggunakan ujung abdomen khusus. Telur terselimuti bahan busa lengket mirip polong yang mengeras guna melindunginya dari embun dingin ekstrem atau risiko kekeringan.",
+        note: "Masa dormansi telur belalang bervariasi luas dari beberapa minggu hingga bulanan tergantung kestabilan suhu tanah hangat.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <!-- Tanah Coklat -->
+                <path d="M5 45 Q 50 48, 95 45 L 95 90 L 5 90 Z" fill="#78350f" opacity="0.8"/>
+                <!-- Kantong Telur dalam Tanah -->
+                <ellipse cx="50" cy="65" rx="18" ry="12" fill="#d97706" opacity="0.3" stroke="#b45309" stroke-dasharray="3 1"/>
+                <ellipse cx="45" cy="63" rx="3.5" ry="7" fill="#fef08a" stroke="#d97706" transform="rotate(30 45 63)"/>
+                <ellipse cx="51" cy="61" rx="3.5" ry="7" fill="#fef08a" stroke="#d97706" transform="rotate(25 51 61)"/>
+                <ellipse cx="56" cy="68" rx="3.5" ry="7" fill="#fef08a" stroke="#d97706" transform="rotate(40 56 68)"/>
+              </svg>`
+      },
+      2: {
+        badge: "Fase 2: Nimfa Tanpa Sayap (Nymph)",
+        title: "Tahap 2: Nimfa Fase Awal (Tanpa Sayap)",
+        desc: "Setelah menetas, muncullah nimfa muda yang berukuran sangat kecil (biasanya keputihan lalu berubah warna hijau atau kecoklatan). Struktur tubuhnya menyerupai belalang dewasa secara fungsional umum, namun ukuran organ reproduksi dan sayap belum ada sama sekali.",
+        note: "Nimfa fase awal ini sangat rentan predator, pertahanan utamanya adalah melompat menjauh secara instan.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <!-- Batang Daun Hijau -->
+                <line x1="5" y1="75" x2="95" y2="75" stroke="#16a34a" stroke-width="3" stroke-linecap="round"/>
+                <!-- Tubuh Nimfa Mini -->
+                <ellipse cx="50" cy="60" rx="14" ry="7" fill="#a3e635" stroke="#4d7c0f" stroke-width="1"/>
+                <circle cx="62" cy="55" r="5.5" fill="#a3e635" stroke="#4d7c0f"/>
+                <!-- Kaki Belakang Belum Terlalu Besar -->
+                <path d="M43 62 L 32 45 L 26 55" stroke="#4d7c0f" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Sisa Punggung Tanpa sayap -->
+                <path d="M42 54 L 52 54" stroke="#4d7c0f" stroke-width="1" stroke-dasharray="2 1"/>
+                <!-- Antena Mini -->
+                <path d="M64 51 Q 68 40, 72 38" stroke="#4d7c0f" stroke-width="0.8"/>
+              </svg>`
+      },
+      3: {
+        badge: "Fase 3: Nimfa Bersayap (Late Nymph)",
+        title: "Tahap 3: Nimfa Lanjut (Tunas Sayap)",
+        desc: "Seiring pertumbuhan melalui ekdisis (molting/pergantian kulit luar) berulang kali (sekitar 5-6 kali), tubuh nimfa membesar drastis. Mulai terlihat kuncup tunas sayap berwarna muda tipis yang kian lama menonjol memanjang di bagian ruas punggung serangga.",
+        note: "Setiap proses pergantian eksoskeleton, belalang menggantung terbalik di dedaunan dalam kondisi tubuh baru yang lunak.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <line x1="5" y1="75" x2="95" y2="75" stroke="#16a34a" stroke-width="3" stroke-linecap="round"/>
+                <ellipse cx="48" cy="58" rx="18" ry="9" fill="#84cc16" stroke="#3f6212" stroke-width="1.5"/>
+                <circle cx="63" cy="51" r="7" fill="#84cc16" stroke="#3f6212"/>
+                <!-- Kaki Belakang Membesar -->
+                <path d="M38 60 L 25 35 L 18 50" stroke="#3f6212" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Tunas Sayap Kecil di Punggung -->
+                <path d="M38 52 Q 46 45, 52 53" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+                <path d="M64 46 Q 70 32, 75 28" stroke="#3f6212" stroke-width="1"/>
+              </svg>`
+      },
+      4: {
+        badge: "Fase 4: Imago (Dewasa)",
+        title: "Tahap 4: Belalang Dewasa (Imago)",
+        desc: "Setelah molting final, kuncup sayap sepenuhnya merentang lurus membentuk sayap fungsional yang lebar, panjang, dan kuat untuk terbang jarak jauh. Seluruh sistem organ tubuh termasuk sistem organ reproduksi belalang kini sudah berkembang optimal dan matang.",
+        note: "Mulut tipe pengunyah dengan mandibula gerigi yang kuat beradaptasi sangat optimal memakan berbagai daun tumbuhan budidaya.",
+        svg: `<svg viewBox="0 0 100 100" class="w-full h-full" fill="none">
+                <line x1="5" y1="75" x2="95" y2="75" stroke="#16a34a" stroke-width="3"/>
+                <!-- Tubuh Belalang Dewasa Besar -->
+                <ellipse cx="46" cy="56" rx="22" ry="11" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+                <circle cx="65" cy="48" r="9" fill="#22c55e" stroke="#15803d"/>
+                <!-- Kaki Lompat Perkasa Belakang -->
+                <path d="M34 58 L 15 25 L 8 45" stroke="#15803d" stroke-width="4" stroke-linecap="round"/>
+                <!-- Sayap Lebar Panjang Menutup Sempurna -->
+                <path d="M26 51 C35 44, 52 46, 56 55 C46 62, 32 60, 26 51 Z" fill="#65a30d" stroke="#15803d" stroke-width="1"/>
+                <!-- Antena Panjang -->
+                <path d="M66 42 Q 74 22, 80 15" stroke="#15803d" stroke-width="1.5"/>
+              </svg>`
+      }
+    };
+
+    function setGrasshopperStage(stageNum) {
+      const data = grasshopperData[stageNum];
+      document.getElementById('gh-svg-container').innerHTML = data.svg;
+      document.getElementById('gh-stage-badge').innerText = data.badge;
+      document.getElementById('gh-stage-title').innerText = data.title;
+      document.getElementById('gh-stage-desc').innerText = data.desc;
+      document.getElementById('gh-stage-note').innerText = data.note;
+
+      document.querySelectorAll('.gh-btn').forEach(btn => {
+        btn.className = "gh-btn text-slate-600 hover:bg-slate-100 text-xs px-3 py-1.5 rounded font-bold transition-all";
+      });
+      document.getElementById(`btn-gh-${stageNum}`).className = "gh-btn bg-amber-600 text-white text-xs px-3 py-1.5 rounded font-bold transition-all";
+    }
+
+    // ================= MINI LAB CONTROLLER =================
+    const labData = {
+      kupu: {
+        correctOrder: ["Telur", "Ulat (Larva)", "Kepompong (Pupa)", "Kupu-Kupu (Imago)"],
+        stages: [
+          { name: "Kepompong (Pupa)", emoji: "🟤", desc: "Masa transformasi histolisis organ" },
+          { name: "Telur", emoji: "🍃🥚", desc: "Tahap awal perkembangan embrio di permukaan daun" },
+          { name: "Kupu-Kupu (Imago)", emoji: "🦋", desc: "Fase dewasa bersayap matang reproduksi" },
+          { name: "Ulat (Larva)", emoji: "🐛", desc: "Fase sangat aktif mencari makan protein daun" }
+        ],
+        theme: "emerald"
+      },
+      katak: {
+        correctOrder: ["Telur", "Kecebong (Berudu)", "Berudu Berkaki", "Katak Muda (Percil)", "Katak Dewasa"],
+        stages: [
+          { name: "Katak Dewasa", emoji: "🐸", desc: "Hewan dewasa terestrial pemakan serangga" },
+          { name: "Telur", emoji: "🥚💧", desc: "Butiran terlindung jeli tebal di air" },
+          { name: "Kecebong (Berudu)", emoji: "🐟", desc: "Bernapas murni memakai insang luar di air" },
+          { name: "Katak Muda (Percil)", emoji: "🦎", desc: "Ekor menyusut terserap ekor, kaki berfungsional" },
+          { name: "Berudu Berkaki", emoji: "🦵", desc: "Mulai tumbuh kaki belakang disusul kaki depan" }
+        ],
+        theme: "teal"
+      },
+      belalang: {
+        correctOrder: ["Telur", "Nimfa Tanpa Sayap", "Nimfa Bersayap", "Belalang Dewasa (Imago)"],
+        stages: [
+          { name: "Nimfa Bersayap", emoji: "🦗🌱", desc: "Nimfa lanjut yang sudah memiliki tunas sayap" },
+          { name: "Telur", emoji: "🕳️🥚", desc: "Diletakkan berpasir tebal dalam lubang tanah" },
+          { name: "Belalang Dewasa (Imago)", emoji: "🦗✨", desc: "Serangga dewasa matang dengan sayap sempurna" },
+          { name: "Nimfa Tanpa Sayap", emoji: "🐛🦗", desc: "Belalang muda berukuran sangat kecil" }
+        ],
+        theme: "amber"
+      }
+    };
+
+    let activeLabType = 'kupu';
+    let userSelectionOrder = [];
+
+    function initLab(type) {
+      activeLabType = type;
+      userSelectionOrder = [];
+      const currentLab = labData[type];
+
+      // Reset style buttons selection
+      document.querySelectorAll('#btn-lab-kupu, #btn-lab-katak, #btn-lab-belalang').forEach(btn => {
+        btn.className = "px-4 py-2 bg-slate-100 text-slate-600 hover:bg-slate-200 border-2 border-transparent rounded-xl text-sm font-bold transition-all";
+      });
+      const activeBtn = document.getElementById(`btn-lab-${type}`);
+      
+      let themeColor = "emerald";
+      if (type === 'kupu') themeColor = "emerald";
+      if (type === 'katak') themeColor = "teal";
+      if (type === 'belalang') themeColor = "amber";
+
+      activeBtn.className = `px-4 py-2 bg-${themeColor}-100 text-${themeColor}-800 border-2 border-${themeColor}-500 rounded-xl text-sm font-bold transition-all`;
+
+      // Render Scrambled Zone
+      const scrambledZone = document.getElementById('scrambled-zone');
+      scrambledZone.innerHTML = '';
+      
+      currentLab.stages.forEach((stage, idx) => {
+        scrambledZone.innerHTML += `
+          <button onclick="clickScrambledStage('${stage.name}')" id="scrambled-card-${idx}" class="p-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl shadow-sm text-left transition-all hover:scale-[1.02] flex items-center gap-3">
+            <span class="text-3xl">${stage.emoji}</span>
+            <div>
+              <span class="font-bold text-slate-800 text-xs md:text-sm block">${stage.name}</span>
+              <p class="text-[10px] text-slate-400 leading-tight">${stage.desc}</p>
+            </div>
+          </button>
+        `;
+      });
+
+      renderTargetZone();
+      hideFeedback();
+    }
+
+    function clickScrambledStage(stageName) {
+      // Check if stage is already selected
+      if (userSelectionOrder.includes(stageName)) {
+        // Remove from list
+        userSelectionOrder = userSelectionOrder.filter(item => item !== stageName);
+      } else {
+        // Add to list
+        userSelectionOrder.push(stageName);
+      }
+      renderTargetZone();
+      hideFeedback();
+    }
+
+    function renderTargetZone() {
+      const targetZone = document.getElementById('target-zone');
+      if (userSelectionOrder.length === 0) {
+        targetZone.innerHTML = `<p class="text-slate-400 text-center text-sm italic py-8">Klik kartu acak di sebelah kiri untuk menyusun di sini secara berurutan...</p>`;
+        return;
+      }
+
+      targetZone.innerHTML = '';
+      userSelectionOrder.forEach((item, index) => {
+        // Find metadata stage
+        const originalStage = labData[activeLabType].stages.find(stg => stg.name === item);
+        targetZone.innerHTML += `
+          <div class="flex items-center gap-3 bg-white p-2.5 rounded-xl border border-emerald-100 shadow-sm animate-fadeIn">
+            <span class="bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold">${index + 1}</span>
+            <span class="text-xl">${originalStage.emoji}</span>
+            <span class="font-bold text-slate-700 text-xs md:text-sm flex-grow">${item}</span>
+            <button onclick="clickScrambledStage('${item}')" class="text-red-500 hover:text-red-700 font-extrabold text-sm px-2">✕</button>
+          </div>
+        `;
+      });
+    }
+
+    function resetLab() {
+      userSelectionOrder = [];
+      renderTargetZone();
+      hideFeedback();
+    }
+
+    function checkLabResult() {
+      const currentLab = labData[activeLabType];
+      const feedbackDiv = document.getElementById('lab-feedback');
+      
+      // Validation length
+      if (userSelectionOrder.length < currentLab.correctOrder.length) {
+        feedbackDiv.className = "p-3 rounded-lg text-xs font-semibold text-center bg-amber-100 text-amber-800 block animate-pulse";
+        feedbackDiv.innerText = "⚠️ Susun semua tahapan terlebih dahulu!";
+        return;
+      }
+
+      // Check order values
+      let isCorrect = true;
+      for (let i = 0; i < currentLab.correctOrder.length; i++) {
+        if (userSelectionOrder[i] !== currentLab.correctOrder[i]) {
+          isCorrect = false;
+          break;
+        }
+      }
+
+      if (isCorrect) {
+        feedbackDiv.className = "p-3 rounded-lg text-xs font-semibold text-center bg-emerald-100 text-emerald-800 block";
+        feedbackDiv.innerText = "🎉 Luar Biasa! Susunan kamu sudah benar dan tepat!";
+      } else {
+        feedbackDiv.className = "p-3 rounded-lg text-xs font-semibold text-center bg-rose-100 text-rose-800 block";
+        feedbackDiv.innerText = "❌ Urutan belum tepat. Cek kembali petunjuk materi lalu coba lagi!";
+      }
+    }
+
+    function hideFeedback() {
+      document.getElementById('lab-feedback').className = "hidden";
+    }
+
+
+    // ================= EVALUASI KUIS CONTROLLER =================
+    const quizQuestions = [
+      {
+        question: "Manakah pernyataan di bawah ini yang menjelaskan definisi metamorfosis paling lengkap?",
+        options: [
+          "Pertambahan berat badan dan ukuran volume tubuh hewan secara eksponensial.",
+          "Proses perubahan penampilan fisik dan struktur anatomi setelah penetasan atau kelahiran.",
+          "Proses pembiakan seksual di dalam air yang dibantu oleh lendir tebal.",
+          "Pengelupasan rangka luar (ekdisis) secara terus-menerus tanpa ada penambahan fungsi organ."
+        ],
+        correctIndex: 1,
+        explanation: "Metamorfosis mencakup serangkaian perubahan anatomi, fisik, fisiologis secara mendalam yang dilalui hewan setelah kelahiran/penetasan."
+      },
+      {
+        question: "Faktor pembeda utama yang memisahkan antara metamorfosis sempurna (holometabola) dengan metamorfosis tidak sempurna (hemimetabola) adalah...",
+        options: [
+          "Ada tidaknya fase bertelur",
+          "Ada tidaknya fase kepompong (pupa)",
+          "Jenis makanan saat masa pertumbuhan",
+          "Waktu siklus perkembangan hidupnya"
+        ],
+        correctIndex: 1,
+        explanation: "Metamorfosis sempurna memiliki tahapan istirahat/pupa (kepompong) di mana perombakan seluler secara menyeluruh berlangsung. Metamorfosis tidak sempurna melewatkan fase pupa dan langsung ke fase nimfa."
+      },
+      {
+        question: "Selama fase kepompong (pupa), ulat kelihatan diam seperti mati. Namun, di dalam kepompong sedang berlangsung proses biologis yang sangat penting berupa...",
+        options: [
+          "Pengumpulan nutrisi daun yang sangat masif",
+          "Pecahnya cangkang telur untuk mengeluarkan sayap",
+          "Proses pelelehan organ tubuh (histolisis) dan rekonstruksi organ dewasa secara total",
+          "Pertukaran zat oksigen menggunakan insang luar"
+        ],
+        correctIndex: 2,
+        explanation: "Selama tahapan pupa, terjadi dekonstruksi sel ulat (histolisis) menjadi bubur nutrisi untuk dibangun kembali menjadi sel-sel dewasa baru pembentuk sayap, antena, kaki panjang, dsb."
+      },
+      {
+        question: "Belalang betina meletakkan polong busa telurnya di dalam pasir atau serasah tanah. Tujuan adaptasi peletakan telur ini adalah...",
+        options: [
+          "Mempermudah telur belalang untuk terbawa air hujan ke hilir",
+          "Menjaga kelembapan suhu yang stabil dan mengamankannya dari jangkauan predator langsung",
+          "Agar telur bisa langsung mendapatkan nutrisi dari akar tumbuhan",
+          "Menghindari paparan gas oksigen bebas dari atmosfer bumi"
+        ],
+        correctIndex: 1,
+        explanation: "Busa polong yang mengeras melindungi telur dari fluktuasi cuaca dingin/panas esktrem serta meminimalkan penemuan oleh serangga karnivora pemangsa telur di atas tanah."
+      },
+      {
+        question: "Di bawah ini, pasangan hewan yang keduanya mengalami siklus metamorfosis tidak sempurna (hemimetabola) adalah...",
+        options: [
+          "Katak dan Kupu-kupu",
+          "Nyamuk dan Kumbang",
+          "Kecoak dan Belalang",
+          "Lalat dan Jangkrik"
+        ],
+        correctIndex: 2,
+        explanation: "Kecoak dan belalang adalah contoh serangga hemimetabola karena mereka mengalami perubahan bertahap: Telur &rarr; Nimfa (muda mirip dewasa) &rarr; Imago."
+      }
+    ];
+
+    let currentQuestionIdx = 0;
+    let quizScore = 0;
+    let selectedOptionIdx = null;
+
+    function startQuiz() {
+      currentQuestionIdx = 0;
+      quizScore = 0;
+      selectedOptionIdx = null;
+
+      document.getElementById('quiz-welcome-screen').classList.add('hidden');
+      document.getElementById('quiz-result-screen').classList.add('hidden');
+      document.getElementById('quiz-play-screen').classList.remove('hidden');
+
+      renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+      const currentQ = quizQuestions[currentQuestionIdx];
+      selectedOptionIdx = null;
+
+      // Update Header Progress
+      document.getElementById('quiz-current-num').innerText = currentQuestionIdx + 1;
+      const progressPercent = ((currentQuestionIdx + 1) / quizQuestions.length) * 100;
+      document.getElementById('quiz-progress-bar').style.width = `${progressPercent}%`;
+
+      // Render Question Text
+      document.getElementById('quiz-question-text').innerText = currentQ.question;
+
+      // Render Options
+      const optionsContainer = document.getElementById('quiz-options-container');
+      optionsContainer.innerHTML = '';
+
+      currentQ.options.forEach((opt, idx) => {
+        optionsContainer.innerHTML += `
+          <button onclick="selectQuizOption(${idx})" id="opt-btn-${idx}" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/20 font-medium text-sm transition-all flex items-start gap-3">
+            <span class="bg-slate-100 text-slate-700 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs shrink-0">${String.fromCharCode(65 + idx)}</span>
+            <span class="text-slate-700 leading-tight">${opt}</span>
+          </button>
+        `;
+      });
+
+      // Reset bottom button
+      const nextBtn = document.getElementById('quiz-next-btn');
+      nextBtn.disabled = true;
+      nextBtn.className = "bg-slate-300 text-slate-500 cursor-not-allowed font-bold py-3 px-6 rounded-xl text-sm transition-all";
+
+      // Hide explanation box
+      document.getElementById('quiz-explanation-box').classList.add('hidden');
+    }
+
+    function selectQuizOption(idx) {
+      if (selectedOptionIdx !== null) return; // Prevent change after select
+
+      selectedOptionIdx = idx;
+      const currentQ = quizQuestions[currentQuestionIdx];
+      const isCorrect = idx === currentQ.correctIndex;
+
+      // Update selection scoring
+      if (isCorrect) {
+        quizScore += 20; // 5 questions * 20 pts = 100 max
+      }
+
+      // Highlight options
+      currentQ.options.forEach((opt, oIdx) => {
+        const btn = document.getElementById(`opt-btn-${oIdx}`);
+        if (oIdx === currentQ.correctIndex) {
+          // Highlight Correct
+          btn.className = "w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-800 font-bold text-sm flex items-start gap-3 animate-pulse";
+          btn.querySelector('span').className = "bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs shrink-0";
+        } else if (oIdx === idx) {
+          // Highlight Wrong Selection
+          btn.className = "w-full text-left p-4 rounded-xl border-2 border-rose-500 bg-rose-50 text-rose-800 font-bold text-sm flex items-start gap-3";
+          btn.querySelector('span').className = "bg-rose-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs shrink-0";
+        } else {
+          // Default Gray out rest
+          btn.className = "w-full text-left p-4 rounded-xl border border-slate-100 opacity-55 font-medium text-sm flex items-start gap-3 cursor-not-allowed";
+        }
+      });
+
+      // Show Explanation box
+      const expBox = document.getElementById('quiz-explanation-box');
+      expBox.classList.remove('hidden');
+      if (isCorrect) {
+        expBox.className = "p-4 rounded-xl text-sm border bg-emerald-50/50 border-emerald-200 text-emerald-800 space-y-1 animate-fadeIn";
+        expBox.innerHTML = `<strong>🟢 Benar!</strong> <p class="text-xs text-emerald-700">${currentQ.explanation}</p>`;
+      } else {
+        expBox.className = "p-4 rounded-xl text-sm border bg-rose-50/50 border-rose-100 text-rose-800 space-y-1 animate-fadeIn";
+        expBox.innerHTML = `<strong>🔴 Kurang Tepat!</strong> <p class="text-xs text-rose-700">${currentQ.explanation}</p>`;
+      }
+
+      // Activate Next Button
+      const nextBtn = document.getElementById('quiz-next-btn');
+      nextBtn.disabled = false;
+      nextBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl text-sm transition-all shadow-md shadow-emerald-600/10 cursor-pointer";
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIdx < quizQuestions.length - 1) {
+        currentQuestionIdx++;
+        renderQuizQuestion();
+      } else {
+        // Show Results Screen
+        document.getElementById('quiz-play-screen').classList.add('hidden');
+        document.getElementById('quiz-result-screen').classList.remove('hidden');
+
+        // Render evaluation score details
+        const finalScore = quizScore;
+        document.getElementById('quiz-result-score').innerText = finalScore;
+        
+        const correctCount = finalScore / 20;
+        document.getElementById('quiz-result-ratio').innerText = `${correctCount} / ${5 - correctCount}`;
+
+        const resultEmoji = document.getElementById('quiz-result-emoji');
+        const resultTitle = document.getElementById('quiz-result-title');
+        const resultDesc = document.getElementById('quiz-result-desc');
+
+        if (finalScore >= 80) {
+          resultEmoji.innerText = "🏆";
+          resultTitle.innerText = "Luar Biasa, Kamu Hebat!";
+          resultTitle.className = "font-black text-xl text-emerald-700";
+          resultDesc.innerText = "Kamu sudah menguasai seluruh konsep metamorfosis kelas 8 dengan sempurna. Pemahaman biologi biologi kamu sudah sangat matang!";
+        } else if (finalScore >= 60) {
+          resultEmoji.innerText = "👍";
+          resultTitle.innerText = "Kerja Bagus!";
+          resultTitle.className = "font-black text-xl text-teal-700";
+          resultDesc.innerText = "Kamu sudah cukup baik menguasai materi ini. Sedikit belajar lagi di bagian simulator interaktif akan membuat kamu semakin mahir.";
+        } else {
+          resultEmoji.innerText = "📚";
+          resultTitle.innerText = "Ayo Semangat Belajar Lagi!";
+          resultTitle.className = "font-black text-xl text-amber-600";
+          resultDesc.innerText = "Jangan berkecil hati. Bacalah ulang materi di bagian Metamorfosis Sempurna dan Tidak Sempurna, lalu ulangi kuis ini untuk meningkatkan skormu.";
+        }
+      }
+    }
+
+    // Set simulator default onload
+    window.onload = function() {
+      setButterflyStage(1);
+      setFrogStage(1);
+      setGrasshopperStage(1);
+    }
+  </script>
+</body>
+</html>
